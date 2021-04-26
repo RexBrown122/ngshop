@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DogsServiceService } from '../dogs-service.service';
+import { Dog } from '../dog';
 
 @Component({
   selector: 'app-dog-details',
@@ -8,10 +9,11 @@ import { DogsServiceService } from '../dogs-service.service';
 })
 export class DogDetailsComponent implements OnInit {
 
-  private dogs = this.getAll();
   private count:number = 0;
 
-  constructor(private dogsService: DogsServiceService) { }
+  constructor(private DogsService: DogsServiceService) {
+    //sessionStorage.setItem('likeCount', this.count.toString());
+  }
 
   ngOnInit(): void {
   }
@@ -19,17 +21,13 @@ export class DogDetailsComponent implements OnInit {
   get getCount() {
     return this.count;
   }
-  
+
   like() {
     this.count++;
+    //sessionStorage.setItem('likeCount', this.count.toString());
   }
 
-  get getDogs() {
-    return this.dogs;
+  addToFavorites() {
+    this.DogsService.addToFavorites(/*pass something*/);
   }
-
-  getAll() {
-    return this.dogsService.all();
-  }
-
 }

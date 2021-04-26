@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DogListComponentComponent } from './dog-list-component/dog-list-component.component';
 import { DogFavoritesComponentComponent } from './dog-favorites-component/dog-favorites-component.component';
 import { DogDetailsComponent } from './dog-details/dog-details.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DogDetailsComponent } from './dog-details/dog-details.component';
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
     ReactiveFormsModule
   ],
   providers: [],

@@ -6,9 +6,14 @@ import DOGS from './dogdata.json';
   providedIn: 'root'
 })
 export class DogsServiceService {
-  private dogData = DOGS;
 
-  constructor() { }
+  private dogData = DOGS;
+  private favDogs: Array<Dog> = [];
+
+  constructor() {
+    sessionStorage.setItem('Favorites', JSON.stringify(this.favDogs));
+    console.log(this.favDogs);
+  }
 
   all() {
     return this.dogData;
@@ -23,5 +28,15 @@ export class DogsServiceService {
         return 0;
       }
     }
+  }
+
+  addToFavorites(newDog:Dog) {
+    console.log(newDog);
+    this.favDogs.push(newDog);
+    sessionStorage.setItem('Favorites', JSON.stringify(this.favDogs));
+  }
+
+  get getFavDog(){
+    return this.favDogs;
   }
 }

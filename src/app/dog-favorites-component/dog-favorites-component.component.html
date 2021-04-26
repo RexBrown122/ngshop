@@ -1,1 +1,18 @@
-<p>dog-favorites-component works!</p>
+<div id="pageTitle">
+  <h2 class="title">Favorite DogList</h2>
+</div>
+
+<div id="pageContent" class="container">
+<div class="row itemBlock">
+  <div *ngFor="let dog of dogs" class="itemContainer col-md-3 col-sm-6 col-12" >
+    <div>   
+      <h4 class="itemName">{{dog.name}}</h4>
+      <img class="itemImage" src="{{dog.image}}">
+      <br>
+      <app-dog-details></app-dog-details>
+    </div>
+    
+  </div>
+</div>
+
+</div>

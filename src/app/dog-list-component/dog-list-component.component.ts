@@ -13,7 +13,6 @@ export class DogListComponentComponent implements OnInit {
 
   constructor(private dogsService: DogsServiceService) {  }
 
-  
   ngOnInit(): void {
   }
 
